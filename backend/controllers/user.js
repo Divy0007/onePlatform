@@ -213,9 +213,9 @@ exports.updateProfile = async (req, res) => {
     }
 
     if (avatar) {
-      await cloudinary.v2.uploader.destroy(user.avatar.public_id);
+      await cloudinary.uploader.destroy(user.avatar.public_id);
 
-      const myCloud = await cloudinary.v2.uploader.upload(avatar, {
+      const myCloud = await cloudinary.uploader.upload(avatar, {
         folder: "avatars",
       });
       user.avatar.public_id = myCloud.public_id;
