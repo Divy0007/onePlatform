@@ -4,7 +4,7 @@ const cloudinary = require("cloudinary").v2;
 exports.createPost = async (req, res) => {
   try {
     const myCloud = await cloudinary.uploader.upload(req.body.image, {
-      folder:"posts",
+      folder: "posts",
     });
     const newPostData = {
       caption: req.body.caption,
@@ -52,7 +52,7 @@ exports.deletePost = async (req, res) => {
       });
     }
 
-    await cloudinary.v2.uploader.destroy(post.image.public_id);
+    await cloudinary.uploader.destroy(post.image.public_id);
 
     await post.remove();
 

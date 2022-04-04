@@ -53,7 +53,12 @@ const Register = () => {
           sx={{ height: "10vmax", width: "10vmax" }}
         />
 
-        <input type="file" accept="image/*" onChange={handleImageChange} />
+        <input
+          type="file"
+          accept="image/*"
+          required
+          onChange={handleImageChange}
+        />
 
         <input
           type="text"
